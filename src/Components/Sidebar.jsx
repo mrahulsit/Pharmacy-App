@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
 import '../Styles/Sidebar.css';
 import Pincode from './Pincode.jsx';
 import axios from 'axios';
@@ -45,9 +44,10 @@ export default function Sidebar() {
     <div>
       {['right'].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>
-         <>{postOffice ? `${postOffice}` : "Enter Pincode"}</>
-          </Button>
+          <span className='spanSmall'>Delivery to</span> <br/>
+          <span onClick={toggleDrawer(anchor, true)} className='spantext'>
+            {postOffice ? `${postOffice}` : "Enter Pincode"}
+          </span>
           <Drawer
             anchor={anchor}
             open={state[anchor]}
