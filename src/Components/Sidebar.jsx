@@ -41,7 +41,7 @@ export default function Sidebar() {
   };
 
   return (
-    <div>
+    <div className='head'>
       {['right'].map((anchor) => (
         <React.Fragment key={anchor}>
           <span className='spanSmall'>Delivery to</span> <br/>

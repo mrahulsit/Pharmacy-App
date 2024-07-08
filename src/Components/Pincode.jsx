@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { TextField, InputAdornment } from '@mui/material';
 import Button from '@mui/material/Button';
+import '../Styles/Sidebar.css'
 
 export default function Pincode({ name, setName, handleRequest, closeDrawer }) {
   const onSetName = (e) => {
