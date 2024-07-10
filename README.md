@@ -1,24 +1,22 @@
-Pharmacy Project
-This project is a Pharmacy Management System built with React and Vite on the frontend, and Node.js with Express on the backend.
-
+Pharmacy Project<br/>
+This project is a Pharmacy Management System built with React and Vite on the frontend, and Node.js with Express on the backend.<br/>
 Frontend
 Technologies Used
 React: A JavaScript library for building user interfaces.
 Vite: A next-generation frontend tool that provides fast development server and optimized production builds.
 Getting Started
 To get started with the frontend:
-
-Clone the Repository
+**Clone the Repository**
 ``git clone <repository-url>
 cd pharmacy-project
 Install Dependencies``
 
-Ensure you have Node.js and npm installed.
-
+**Ensure you have Node.js and npm installed**
 ``npm install
 Run the Development Server``
 
 ``npm run dev``
+
 This will start the Vite development server. Open http://localhost:3000 to view it in the browser.
 
 *Build for Production*
