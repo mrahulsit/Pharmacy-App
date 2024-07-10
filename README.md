@@ -1,4 +1,4 @@
-**#Pharmacy Project**<br/>
+#**Pharmacy Project**<br/>
 This project is a Pharmacy Management System built with React and Vite on the frontend, and Node.js with Express on the backend.<br/>
 
 **Frontend**<br/>
