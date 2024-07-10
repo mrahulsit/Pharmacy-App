@@ -1,4 +1,4 @@
-**Pharmacy Project**<br/>
+**#Pharmacy Project**<br/>
 This project is a Pharmacy Management System built with React and Vite on the frontend, and Node.js with Express on the backend.<br/>
 
 **Frontend**<br/>
@@ -9,7 +9,7 @@ Vite: A next-generation frontend tool that provides fast development server and 
 **Getting Started:**<br/>
 To get started with the frontend:
 **Clone the Repository**<br/>
-``git clone <repository-url>
+``git clone <repository-url><br/>
 cd pharmacy-project``
 
 **Install Dependencies**<br/>
