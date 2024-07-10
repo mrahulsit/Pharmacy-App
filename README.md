@@ -9,21 +9,16 @@ Getting Started
 To get started with the frontend:
 
 Clone the Repository
-
-bash
-Copy code
-git clone <repository-url>
+``git clone <repository-url>
 cd pharmacy-project
-Install Dependencies
+Install Dependencies``
 
 Ensure you have Node.js and npm installed.
 
-bash
-Copy code
-npm install
-Run the Development Server
+``npm install
+Run the Development Server``
 
-npm run dev
+``npm run dev``
 This will start the Vite development server. Open http://localhost:3000 to view it in the browser.
 
 *Build for Production*
