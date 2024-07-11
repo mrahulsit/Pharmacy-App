@@ -1,0 +1,21 @@
+.search-span{
+    font-size: medium;
+}
+.search{
+    border-radius: 40px;
+    background-color: white;
+    color: black;
+    border: 0px;
+    outline: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.226);
+}
+.searchbar{
+    width: 50dvw;
+    border: 1px solid rgba(128, 128, 128, 0.273);
+}
+.aboutText{
+    margin-left:20dvw;
+}
+Form{
+    margin-top: 5dvh;
+}
