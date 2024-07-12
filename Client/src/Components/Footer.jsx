@@ -3,7 +3,7 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 export default function App() {
   return (
-    <MDBFooter style={{ backgroundColor: '#0a4275' }} className='text-center text-lg-start text-white'>
+    <MDBFooter style={{ backgroundColor: '#317873' }} className='text-center text-lg-start text-white'>
       <section className='d-flex justify-content-center justify-content-lg-between p-3 border-bottom'>
         <div className='ms-5 d-none d-lg-block'>
           <span>Get connected with us on social networks:</span>
@@ -111,7 +111,7 @@ export default function App() {
         </MDBContainer>
       </section>
 
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+      <div className='text-center p-3' style={{ backgroundColor: '#004B49' }}>
         &copy; 2024 Copyright:
         <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
           Pharmacy.com

@@ -1,21 +1,21 @@
-import '../Styles/Login.css';
-import Drawer from '@mui/material/Drawer';
-import * as React from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useHistory
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Home from './Home.jsx';
-import axios from 'axios'
+import Drawer from '@mui/material/Drawer';
+import axios from 'axios';
+import Signup from './Signup.jsx'; // Ensure Signup is correctly imported
+import '../Styles/Login.css';
 
 export default function Login() {
-  const [state, setState] = React.useState({
-    right: false,
-  });
-
-  const [username, setUsername] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const [error, setError] = React.useState('');
-  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  const [state, setState] = useState({ right: false });
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showSignup, setShowSignup] = useState(false); // State to toggle between login and signup
+  const history = useNavigate(); // Initialize useHistory
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -27,68 +27,82 @@ export default function Login() {
   const handleLogin = async (event) => {
     event.preventDefault();
     setError('');
-
     try {
-      // Replace with your login API endpoint
-      const response = await axios.post('/api/login', { username, password });
-
-      if (response.data.success) {
+      const response = await axios.post('http://localhost:5000/api/login', { username, password });
+      if (response.data.token) {
+        localStorage.setItem('token', response.data.token);
         setIsLoggedIn(true);
-        setState({ ...state, right: false }); // Close the drawer after successful login
+        setState({ ...state, right: false });
       } else {
         setError('Invalid username or password.');
       }
     } catch (err) {
-      setError('An error occurred. Please try again.');
+      setError('Error during login. Please try again.');
     }
   };
 
   const list = (anchor) => (
-    <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 400 }}
-      role="presentation"
-    >
-      <form onSubmit={handleLogin} className='login-form'>
-        <h2>Login</h2>
-        {error && <p className='error'>{error}</p>}
-        <TextField
-          label="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          fullWidth
-          margin="normal"
-        />
-        <TextField
-          label="Password"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          fullWidth
-          margin="normal"
-        />
-        <Button type="submit" variant="contained" color="primary" fullWidth>
-          Login
-        </Button>
-      </form>
+    <Box sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 400 }} role="presentation">
+      {showSignup ? (
+        <Signup />
+      ) : (
+        <form className='login-form'>
+          <h2>Login</h2>
+          {error && <p className='error'>{error}</p>}
+          <TextField
+            label="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            fullWidth
+            margin="normal"
+          />
+          <TextField
+            label="Password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            fullWidth
+            margin="normal"
+          />
+          <div className='buttonFlex'>
+            <Button variant="contained" color="primary" className='button-Login' onClick={handleLogin}>
+              Login
+            </Button>
+            <Button variant="contained" color="primary" className='button-Signup' onClick={() => setShowSignup(true)}>
+              Signup
+            </Button>
+          </div>
+        </form>
+      )}
     </Box>
   );
 
+  useEffect(() => {
+    if (state.right) {
+      history('/#login');
+    } else {
+      history('/');
+    }
+  }, [state.right, history]); // Update URL when drawer state changes
+
   return (
-    <div>
-      {isLoggedIn ? (
-        <Home />
-      ) : (
-        <>
-          <span onClick={toggleDrawer('right', true)} style={{color:'#ffffff'}}>Hello,Log in</span>
-          <Drawer
-            anchor='right'
-            open={state.right}
-            onClose={toggleDrawer('right', false)}
-          >
-            {list('right')}
-          </Drawer>
-        </>
-      )}
-    </div>
+    <>
+      <div>
+        {isLoggedIn === true ? (
+          <>
+            <span onClick={toggleDrawer('right', true)} style={{ color: '#ffffff' }}>
+            {`${username}`}
+            </span>
+          </>
+        ) : (
+          <span onClick={toggleDrawer('right', true)} style={{ color: '#ffffff' }}>
+            Hello, Log in
+          </span>
+        )}
+        <Drawer anchor='right' open={state.right} onClose={toggleDrawer('right', false)}>
+          {list('right')}
+        </Drawer>
+      </div>
+    </>
   );
 }

@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    font-family: "Montserrat", sans-serif;
+}
 .search-span{
     font-size: medium;
 }
@@ -7,15 +11,22 @@
     color: black;
     border: 0px;
     outline: none;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.226);
 }
 .searchbar{
     width: 50dvw;
+    margin: auto;
     border: 1px solid rgba(128, 128, 128, 0.273);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.164);
 }
 .aboutText{
     margin-left:20dvw;
 }
 Form{
     margin-top: 5dvh;
+}
+.search-wrapper{
+    margin-bottom: 4rem;
+}
+.shop{
+    margin-left: 3dvw;
 }

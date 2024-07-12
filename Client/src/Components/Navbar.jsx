@@ -1,56 +1,70 @@
-import PharmacyLogo from '../assets/PHARMACY.png';
-import '../Styles/Navbar.css';
-import Sidebar from './Sidebar';
-import { Navbar } from 'react-bootstrap';
-import 'font-awesome/css/font-awesome.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons/faCartShopping';
-import { faMobile, faUser } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
-import Login from '../Pages/Login';
+import React, { useState } from 'react';
+import {
+  MDBContainer,
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarToggler,
+  MDBIcon,
+  MDBNavbarNav,
+  MDBNavbarItem,
+  MDBNavbarLink,
+  MDBBtn,
+  MDBDropdown,
+  MDBDropdownToggle,
+  MDBDropdownMenu,
+  MDBDropdownItem,
+  MDBCollapse,
+} from 'mdb-react-ui-kit';
 
-const NavbarMain = () => {
+export default function App() {
+  const [openBasic, setOpenBasic] = useState(false);
+
   return (
-    <>
-      <Navbar
-        style={{ backgroundColor: '#0a4275' }}
-        className='w-100 fixed-top border-0 navbar'>
-        <div className="d-flex flex-wrap align-items-center justify-content-between">
-          <div className="d-flex align-items-center">
-            <a href="/" className="d-inline-flex link-body-emphasis text-decoration-none text-white me-3">
-              <img src={PharmacyLogo} alt="Pharmacy Logo" className='logo' />
-            </a>
-            <div className='horizontal-line'></div>
-            <Sidebar />
-          </div>
+    <MDBNavbar expand='lg' light bgColor='light'>
+      <MDBContainer fluid>
+        <MDBNavbarBrand href='#'>Brand</MDBNavbarBrand>
 
-          <div className="text-center d-flex align-items-center text-white margin-navbar">
-            <div className='px-3 d-flex text-light align-items-center link-tag' style={{ boxShadow: 'none' }}>
-              <FontAwesomeIcon icon={faMobile} size="lg" style={{ color: "#ffffff", }} className='mt-1' />&nbsp;&nbsp;&nbsp;
-              <span className="cart-name mt-1">Download App</span>
-            </div>
+        <MDBNavbarToggler
+          aria-controls='navbarSupportedContent'
+          aria-expanded='false'
+          aria-label='Toggle navigation'
+          onClick={() => setOpenBasic(!openBasic)}
+        >
+          <MDBIcon icon='bars' fas />
+        </MDBNavbarToggler>
 
-            <div className="px-3 d-flex text-light align-items-center link-tag" style={{ boxShadow: 'none' }} size='lg'>
-              <FontAwesomeIcon icon={faUser} style={{ color: "#ffffff" }} size='lg' />&nbsp;&nbsp;&nbsp;
-              <Link to='#'><span className="cart-name"><Login /></span></Link>
-            </div>
+        <MDBCollapse navbar open={openBasic}>
+          <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
+            <MDBNavbarItem>
+              <MDBNavbarLink active aria-current='page' href='#'>
+                Home
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href='#'>Link</MDBNavbarLink>
+            </MDBNavbarItem>
 
-            <div className='px-3 d-flex text-light align-items-center link-tag' style={{ boxShadow: 'none' }} size='lg'>
-              <FontAwesomeIcon icon={faCartShopping} size="lg" style={{ color: "#ffffff", }} />&nbsp;&nbsp;&nbsp;
-              <span className="cart-name">Cart</span>
-            </div>
-          </div>
-        </div>
-      </Navbar>
-      <div className='linktag py-3'>
-        <a href="#" className="px-2 text-white">Medicine</a>
-        <a href="#" className="px-2 text-white">Health Blogs</a>
-        <a href="#" className="px-2 text-white">PLUS</a>
-        <a href="#" className="px-2 text-white">Offers</a>
-        <a href="#" className="px-2 text-white">Value Store</a>
-      </div>
-    </>
+            <MDBNavbarItem>
+              <MDBDropdown>
+                <MDBDropdownToggle tag='a' className='nav-link' role='button'>
+                  Dropdown
+                </MDBDropdownToggle>
+                <MDBDropdownMenu>
+                  <MDBDropdownItem link>Action</MDBDropdownItem>
+                  <MDBDropdownItem link>Another action</MDBDropdownItem>
+                  <MDBDropdownItem link>Something else here</MDBDropdownItem>
+                </MDBDropdownMenu>
+              </MDBDropdown>
+            </MDBNavbarItem>
+
+            <MDBNavbarItem>
+              <MDBNavbarLink disabled href='#' tabIndex={-1} aria-disabled='true'>
+                Disabled
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+          </MDBNavbarNav>
+        </MDBCollapse>
+      </MDBContainer>
+    </MDBNavbar>
   );
-};
-
-export default NavbarMain;
+}

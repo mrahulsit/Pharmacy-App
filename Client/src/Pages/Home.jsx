@@ -1,13 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
-import { Button, Form, InputGroup } from 'react-bootstrap';
+import { Button, Form } from 'react-bootstrap';
 import '../Styles/Home.css'
-import Card from '../Components/Card.jsx'
-import CarouselSwipe from '../Components/CarouselSwipe.jsx';
+import {CarouselSwipe , Brands ,Card , Footer , NavMain} from '../Components/index.js';
 import { wandc , medicine , healthcare, medicare} from '../assets/index.js';
 import '../Styles/Card.css'
-import Navbar from '../Components/Navbar.jsx'
-import Footer from '../Components/Footer.jsx'
+import { InputLabel } from '@mui/material';
 
 const titles = {
     'title1':'Medicines',
@@ -20,28 +18,43 @@ function Home() {
     const sources = [medicine,healthcare,medicare,wandc]
   return (
     <>
-    <Navbar />
+    <NavMain />
     <h2 className='aboutText'>What Are you Looking for ?</h2>
-      <Form className="mb-5">
-            <InputGroup>
-               <input
-                  type="search"
-                  placeholder="Search"
-                  className=" search p-3 searchbar ms-auto"
-                  aria-label="Search"
-                />
-                  <Button className='search me-auto d-flex align-items-center' style={{boxShadow:'0 5px 10px rgba(0, 0, 0, 0.226)'}}>
-                      <FontAwesomeIcon icon={faMagnifyingGlass} size='xl' style={{ color: "#ffffff" }} />&nbsp;&nbsp;
-                      <span className='search-span'>Search</span>
-                  </Button>
-              </InputGroup>
-          </Form>
+    <Form className="mb-5">
+  <InputLabel>
+    <div className="search-wrapper" style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+      <input
+        type="search"
+        placeholder="Search"
+        className="search p-3 searchbar"
+        aria-label="Search"
+      />
+      <Button
+        className='search d-flex align-items-center'
+        style={{
+          borderRadius: '5rem',
+          position: 'absolute',
+          right: '25dvw',
+          height: '75%',
+        }}
+      >
+        <FontAwesomeIcon icon={faMagnifyingGlass} size='xl' style={{ color: "#ffffff" }} />&nbsp;&nbsp;
+        <span className='search-span'>Search</span>
+      </Button>
+    </div>
+  </InputLabel>
+</Form>
+
           <div className="card-container">
             {Object.values(titles).map((title, index) => (
               <Card source={sources[index]} key={index} Title={title} />
             ))}
           </div>
          <CarouselSwipe />
+         
+         <h2 className='shop'>Shop By Categories</h2>
+         <Brands />
+         
          <Footer/> 
     </>
   )

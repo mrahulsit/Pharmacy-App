@@ -1,0 +1,53 @@
+/* Card.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    font-family: "Montserrat", sans-serif;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 40dvw;
+    box-shadow: none;
+    margin: 2dvh 2dvw; 
+    text-align: center;
+  }
+  .card:hover{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.235);
+    padding: 0.5rem;
+  }
+  
+  .card-image {
+    object-fit: contain;
+    aspect-ratio: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
+    padding: 1rem;
+  }
+  
+  @media (min-width: 600px) {
+    .card {
+      max-width: 30dvw; /* Adjusting for larger screens */
+    }
+  }
+  
+  @media (min-width: 900px) {
+    .card {
+      max-width: 20dvw; /* Adjusting for even larger screens */
+    }
+  }
+  
+  .card-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 40dvw;
+    box-shadow: none;
+    margin: 2dvh 2dvw; 
+    text-align: center;
+  }
