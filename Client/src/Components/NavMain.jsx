@@ -126,20 +126,20 @@ function NavMain() {
           </Navbar.Collapse>
         </div>
       </Navbar>
-      <div className="linktag py-3">
-        <Link to="/medicine" className="px-2 text-white">
+      <div className="linktag py-3 flex-wrap justify-content-center">
+        <Link to="/medicine" className="px-2 text-white link-item">
           Medicine
         </Link>
-        <Link to="/healthblogs" className="px-2 text-white">
+        <Link to="/healthblogs" className="px-2 text-white link-item">
           Health Blogs
         </Link>
-        <Link to="/plus" className="px-2 text-white">
+        <Link to="/plus" className="px-2 text-white link-item">
           PLUS
         </Link>
-        <Link to="/offers" className="px-2 text-white">
+        <Link to="/offers" className="px-2 text-white link-item">
           Offers
         </Link>
-        <Link to="/valuestore" className="px-2 text-white">
+        <Link to="/valuestore" className="px-2 text-white link-item">
           Value Store
         </Link>
       </div>
