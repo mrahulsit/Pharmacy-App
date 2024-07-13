@@ -11,79 +11,121 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Login from "../Pages/Login";
+import { Navbar, Nav } from "react-bootstrap";
 
 function NavMain() {
   return (
-    <div>
-      <nav
+    <>
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        fixed="top"
+        className="border-0 navbar w-100"
         style={{ backgroundColor: "#00755E" }}
-        className="w-100 fixed-top border-0 navbar"
       >
-        <div className="d-flex align-items-center justify-content-between">
-          <div className="d-flex flex-row align-items-center">
-            <Link
-              to="/"
-              className="d-inline-flex link-body-emphasis text-decoration-none text-white me-3"
-            >
-              <img src={PharmacyLogo} alt="Pharmacy Logo" className="logo" />
-            </Link>
-            <div className="horizontal-line"></div>
-            <Sidebar />
-          </div>
-
-          <div className="text-center d-flex align-items-center text-white margin-navbar">
-            <div
-              className="px-3 d-flex text-light align-items-center link-tag"
-              style={{ boxShadow: "none" }}
-            >
-              <FontAwesomeIcon
-                icon={faMobile}
-                size="lg"
-                style={{ color: "#ffffff" }}
-                className="mt-1"
-              />
-              &nbsp;&nbsp;&nbsp;
-              <Link to="/footer" className="text-decoration-none">
-                <span className="cart-name mt-1 text-light">Download App</span>
-              </Link>
-            </div>
-
-            <div
-              className="px-3 d-flex text-light align-items-center link-tag"
-              style={{ boxShadow: "none" }}
-              size="lg"
-            >
-              <FontAwesomeIcon
-                icon={faUser}
-                style={{ color: "#ffffff" }}
-                size="lg"
-              />
-              &nbsp;&nbsp;&nbsp;
-              <Link to="#login" className="text-decoration-none cart-name">
-                <span>
+        <div className="container-fluid">
+          <Link to="/" className="navbar-brand d-flex align-items-center">
+            <img src={PharmacyLogo} alt="Pharmacy Logo" className="logo" />
+          </Link>
+          <Sidebar />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse
+            id="responsive-navbar-nav"
+            className="justify-content-between"
+          >
+            <div className="d-none d-lg-flex text-center align-items-center text-white margin-navbar">
+              <Nav.Item className="px-3">
+                <FontAwesomeIcon
+                  icon={faMobile}
+                  size="lg"
+                  className="text-white"
+                />
+                &nbsp;&nbsp;
+                <Link
+                  to="/footer"
+                  className="text-decoration-none text-light ms-2"
+                >
+                  Download App
+                </Link>
+              </Nav.Item>
+              <Nav.Item className="px-3 d-flex text-light align-items-center link-tag">
+                <FontAwesomeIcon
+                  icon={faUser}
+                  size="lg"
+                  className="text-white"
+                />
+                &nbsp;&nbsp;
+                <Link
+                  to="#login"
+                  className="text-decoration-none text-light ms-2"
+                >
                   <Login />
-                </span>
-              </Link>
+                </Link>
+              </Nav.Item>
+              <Nav.Item className="px-3">
+                <FontAwesomeIcon
+                  icon={faCartShopping}
+                  size="lg"
+                  className="text-white"
+                />
+                &nbsp;&nbsp;
+                <Link
+                  to="/cart"
+                  className="text-decoration-none text-light ms-2"
+                >
+                  Cart
+                </Link>
+              </Nav.Item>
             </div>
-
-            <div
-              className="px-3 d-flex text-light align-items-center link-tag"
-              style={{ boxShadow: "none" }}
-              size="lg"
-            >
-              <FontAwesomeIcon
-                icon={faCartShopping}
-                size="lg"
-                style={{ color: "#ffffff" }}
-              />
-              &nbsp;&nbsp;&nbsp;
-              <Link to="/cart" className=" text-decoration-none">
-                <span className="cart-name text-light">Cart</span>
-              </Link>
+            <div className="d-lg-none mx-auto text-center text-white">
+              <Nav className="flex-column align-items-center">
+                <Nav.Item className="px-3 mb-3">
+                  <FontAwesomeIcon
+                    icon={faMobile}
+                    size="lg"
+                    className="text-white"
+                  />
+                  &nbsp;&nbsp;
+                  <Link
+                    to="/footer"
+                    className="text-decoration-none text-light ms-2"
+                  >
+                    Download App
+                  </Link>
+                </Nav.Item>
+                <Nav.Item className="px-3 mb-3 d-flex text-light align-items-center link-tag">
+                  <FontAwesomeIcon
+                    icon={faUser}
+                    size="lg"
+                    className="text-white"
+                  />
+                  &nbsp;&nbsp;
+                  <Link
+                    to="#login"
+                    className="text-decoration-none text-light ms-2"
+                  >
+                    <Login />
+                  </Link>
+                </Nav.Item>
+                <Nav.Item className="px-3 mb-3">
+                  <FontAwesomeIcon
+                    icon={faCartShopping}
+                    size="lg"
+                    className="text-white"
+                  />
+                  &nbsp;&nbsp;
+                  <Link
+                    to="/cart"
+                    className="text-decoration-none text-light ms-2"
+                  >
+                    Cart
+                  </Link>
+                </Nav.Item>
+              </Nav>
             </div>
-          </div>
+          </Navbar.Collapse>
         </div>
-      </nav>
+      </Navbar>
       <div className="linktag py-3">
         <Link to="/medicine" className="px-2 text-white">
           Medicine
@@ -101,7 +143,7 @@ function NavMain() {
           Value Store
         </Link>
       </div>
-    </div>
+    </>
   );
 }
 
