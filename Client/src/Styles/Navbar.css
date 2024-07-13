@@ -71,7 +71,7 @@
 /* Mobile devices (portrait and landscape) */
 @media only screen and (max-width: 767px) {
   .linktag {
-    margin-top: 9vh;
+    margin-top: 5vh;
     margin-bottom: 2rem;
   }
 }
