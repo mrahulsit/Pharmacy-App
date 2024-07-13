@@ -35,7 +35,6 @@
     "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^6.24.1",
     "react-slick": "^0.30.2",
-    "react-swipeable-views-utils": "^0.14.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^6.1.11"
   },
@@ -44,8 +43,6 @@
     "@types/react-dom": "^18.3.0",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-slick": "^0.23.13",
-    "@types/react-swipeable-views": "^0.13.5",
-    "@types/react-swipeable-views-utils": "^0.13.7",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.2",
