@@ -1,17 +1,15 @@
-import { Footer, Navbar } from "../Components/index.js"
-
+import MedicineBrand from "../Components/MedicineBrand";
+import "../Styles/Cart.css";
 
 function MustHave() {
   return (
     <>
-    <Navbar />
-    <div>
-      <h1>Medicines you Must have</h1>
-    </div>
-    <Footer/>
+      <div className="main">
+        <h1>Medicine You Must Have</h1>
+        <MedicineBrand />
+      </div>
     </>
-    
-  )
+  );
 }
 
-export default MustHave
+export default MustHave;

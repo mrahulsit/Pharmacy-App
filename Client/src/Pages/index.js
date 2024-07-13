@@ -1,6 +1,6 @@
-import Fitness from './Fitness'
-import MustHave from './MustHave'
-import WomenBaby from './WomenBaby'
+import Fitness from './Fitness.jsx'
+import MustHave from './MustHave.jsx'
+import WomenBaby from './WomenBaby.jsx'
 
 export {
     Fitness,

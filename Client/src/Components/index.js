@@ -8,7 +8,6 @@ import BrandCard from './BrandCard.jsx'
 import Slide from './Slide.jsx'
 import Brands from './Brands.jsx'
 import MedicineCard from './MedicineCard.jsx'
-import Navbar from './Navbar.jsx'
 
 export {
     Card,
@@ -21,5 +20,4 @@ export {
     Slide,
     Brands,
     MedicineCard,
-    Navbar
 }

@@ -1,122 +1,224 @@
-import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdb-react-ui-kit';
-import 'mdb-react-ui-kit/dist/css/mdb.min.css'
-import '@fortawesome/fontawesome-free/css/all.min.css';
-export default function App() {
+import { Mobile } from "../assets/index.js";
+import { useRef } from "react";
+import { GooglePlayButton, AppGalleryButton } from "react-mobile-app-button";
+import "../Styles/Footer.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedinIn,
+  faProductHunt,
+  faWhatsapp,
+} from "@fortawesome/free-brands-svg-icons";
+
+const Footer = () => {
+  const ref = useRef();
+  const APKUrl = "https://play.google.com/store/apps/details?id=host";
+  const IOSUrl = "https://apps.apple.com/us/app/expo-go/id982107779";
+  () =>
+    window.scrollTo({
+      top: ref.current.offsetTop - 100,
+      behavior: "smooth",
+    });
   return (
-    <MDBFooter style={{ backgroundColor: '#317873' }} className='text-center text-lg-start text-white'>
-      <section className='d-flex justify-content-center justify-content-lg-between p-3 border-bottom'>
-        <div className='ms-5 d-none d-lg-block'>
-          <span>Get connected with us on social networks:</span>
+    <>
+      <hr />
+      <div id="bot1">
+        <div>
+          <img
+            src="https://assets.pharmeasy.in/web-assets/dist/9ac2da37.svg?dim=0x72&dpr=1.25&q=100"
+            alt="1 Lakh+ Products"
+          />
+          <h4 className="texth4">1 Lakh+ Products</h4>
+          <p>
+            We maintain strict quality controls on all our partner retailers, so
+            that you always get standard quality products.
+          </p>
         </div>
         <div>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='white' fab icon='facebook-f' />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='white' fab icon='twitter' />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='white' fab icon='google' />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='white' fab icon='instagram' />
-          </a>
-          <a href='' className='me-4 text-reset'>
-            <MDBIcon color='white' fab icon='linkedin' />
-          </a>
-          <a href='' className='me-5 text-reset'>
-            <MDBIcon color='white' fab icon='github' />
-          </a>
+          <img
+            src="https://assets.pharmeasy.in/web-assets/dist/2f258fe0.svg?dim=0x72&dpr=1.25&q=100"
+            alt="Secure Payment"
+          />
+          <h4 className="texth4">Secure Payment</h4>
+          <p>100% secure and trusted payment protection</p>
         </div>
-      </section>
-
-      <section>
-        <MDBContainer className='text-center text-md-start mt-4'>
-          <MDBRow className='m-1'>
-            <MDBCol md='3' lg='4' xl='3' className='mx-auto m-1'>
-              <h6 className='text-uppercase fw-bold mb-2'>
-                Company
-              </h6>
-              <div className='d-flex flex-column gap-1'>
-              <a href='#!' className='text-reset'>
-                  Careers
-                </a>
-                <a href='#!' className='text-reset'>
-                  About Us
-                </a>
-                <a href='#!' className='text-reset'>
-                  Blogs
-                </a>
-                <a href='#!' className='text-reset'>
-                  Partner with Pharmacy.
-                </a>
-              </div>
-            </MDBCol>
-
-            <MDBCol md='2' lg='2' xl='2' className='my-auto mx-auto'>
-              <h6 className='text-uppercase fw-bold mb-2'>Categories</h6>
-              <div className='d-flex flex-column gap-1'>
-              <a href='#!' className='text-reset'>
-                  Health Care
-                </a>
-                <a href='#!' className='text-reset'>
-                  Baby and Mother Care
-                </a>
-                <a href='#!' className='text-reset'>
-                  Supplements
-                </a>
-                <a href='#!' className='text-reset'>
-                  Home Care
-                </a>
-              </div>
-            </MDBCol>
-
-            <MDBCol md='3' lg='2' xl='2' className='mx-auto my-auto'>
-              <h6 className='text-uppercase fw-bold mb-2'>Useful links</h6>
-              <div className='d-flex flex-column gap-1'>
-              <a href='#!' className='text-reset'>
-                  Price of all medicines
-                </a>
-                <a href='#!' className='text-reset'>
-                  Browse all medicines
-                </a>
-                <a href='#!' className='text-reset'>
-                  Browse all stores
-                </a>
-                <a href='#!' className='text-reset'>
-                  FAQs
-                </a>
-              </div>
-            </MDBCol>
-
-            <MDBCol md='4' lg='3' xl='3' className='mx-auto my-md-auto'>
-              <h6 className='text-uppercase fw-bold mb-2'>Contact</h6>
-              <div className='d-flex flex-column gap-1'>
-              <span>
-                <MDBIcon color='white' icon='home' className='me-2' />&nbsp;New Delhi(1100016), India
-              </span>
-              <span>
-                <MDBIcon color='white' icon='envelope' className='me-3' />
-                pharmacyinfo@gmail.com
-              </span>
-              <span>
-                <MDBIcon color='white' icon='phone' className='me-3' /> + 91 234 567 88
-              </span>
-              <span>
-                <MDBIcon color='white' icon='print' className='me-3' /> + 91 234 567 89
-              </span>
-              </div>
-            </MDBCol>
-          </MDBRow>
-        </MDBContainer>
-      </section>
-
-      <div className='text-center p-3' style={{ backgroundColor: '#004B49' }}>
-        &copy; 2024 Copyright:
-        <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
-          Pharmacy.com
-        </a>
+        <div>
+          <img
+            src="https://assets.pharmeasy.in/web-assets/dist/256fe591.svg?dim=0x72&dpr=1.25&q=100"
+            alt="Easy Return"
+          />
+          <h4 className="texth4">Easy Return</h4>
+          <p>
+            We have a new and dynamic return window policy for medicines and
+            healthcare items. Refer FAQs section for more details.
+          </p>
+        </div>
       </div>
-    </MDBFooter>
+
+      <div id="mob" ref={ref}>
+        <div className="mobimg">
+          <img src={Mobile} alt="mobile App" />
+        </div>
+
+        <div className="app">
+          <div id="txt">Download the App for Free</div>
+          <div className="log">
+            <GooglePlayButton
+              url={APKUrl}
+              theme={"dark"}
+              width={"23rem"}
+              title="Install Mobile App"
+              className={"custom-style"}
+            />
+
+            <AppGalleryButton
+              url={IOSUrl}
+              theme={"dark"}
+              width={"23rem"}
+              title="Install Mobile App"
+              className={"custom-style"}
+            />
+          </div>
+        </div>
+      </div>
+
+      <div id="bot3">
+        <div className="follow">
+          <h5>Get connected with us on social networks:</h5>
+          <div className="connect">
+            <FontAwesomeIcon
+              icon={faFacebook}
+              style={{ color: "#ffffff" }}
+              size="xl"
+            />
+            <FontAwesomeIcon
+              icon={faInstagram}
+              style={{ color: "#ffffff" }}
+              size="xl"
+            />
+            <FontAwesomeIcon
+              icon={faLinkedinIn}
+              style={{ color: "#ffffff" }}
+              size="xl"
+            />
+            <FontAwesomeIcon
+              icon={faWhatsapp}
+              style={{ color: "#ffffff" }}
+              size="xl"
+            />
+            <FontAwesomeIcon
+              icon={faProductHunt}
+              style={{ color: "#ffffff" }}
+              size="xl"
+            />
+          </div>
+        </div>
+        <div id="b3first">
+          <div id="feat">
+            <div>
+              <h4>Company</h4>
+              <p>Careers</p>
+              <p>Blogs</p>
+              <p>Partner with PharmEasy</p>
+              <h4>Our Services</h4>
+              <p>Order Medicine</p>
+              <p>Healthcare Products</p>
+              <p>Diagnostic Tests</p>
+            </div>
+            <div>
+              <h4>Featured Categories</h4>
+              <p>Covid Essentials</p>
+              <p>Devices</p>
+              <p>Nutrition and Fitness Supplements</p>
+              <p>Personal Care</p>
+              <p>Ayurvedic Care</p>
+              <p>Baby and Mom care</p>
+              <p>Skin Care</p>
+              <p>Diabetic Care</p>
+              <p>Women Care</p>
+              <p>Health Food and Drinks</p>
+              <p>Ortho Care</p>
+            </div>
+            <div>
+              <h4>Need Help</h4>
+              <p>Browse All Medicines</p>
+              <p>Browse All Molecules</p>
+              <p>FAQs</p>
+              <h4>Policy Info</h4>
+              <p>Editorial Policy</p>
+              <p>Privacy Policy</p>
+              <p>Vulnerability Disclosure Policy</p>
+              <p>Terms and condition</p>
+              <p>Customer Support Policy</p>
+              <p>Return Policy</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="b3sec">
+          <div id="pay">
+            <h3>Our Payment Partners</h3>
+            <span>
+              <img
+                src="https://assets.pharmeasy.in/web-assets/dist/af0c6812.svg"
+                alt="Payment Partner"
+              />
+            </span>
+            <span>
+              <img
+                src="https://assets.pharmeasy.in/web-assets/dist/0e010044.svg"
+                alt="Payment Partner"
+              />
+            </span>
+            <span>
+              <img
+                src="https://assets.pharmeasy.in/web-assets/dist/1066bb1f.svg"
+                alt="Payment Partner"
+              />
+            </span>
+            <span>
+              <img
+                src="https://assets.pharmeasy.in/web-assets/dist/fbea1701.svg"
+                alt="Payment Partner"
+              />
+            </span>
+            <span>
+              <img
+                src="https://assets.pharmeasy.in/web-assets/dist/3a1a533d.svg"
+                alt="Payment Partner"
+              />
+            </span>
+            <span>
+              <img
+                src="https://assets.pharmeasy.in/web-assets/dist/4733a49d.svg"
+                alt="Payment Partner"
+              />
+            </span>
+            <span>
+              <img
+                src="https://assets.pharmeasy.in/web-assets/dist/b278e536.svg"
+                alt="Payment Partner"
+              />
+            </span>
+            <span>
+              <img
+                src="https://assets.pharmeasy.in/web-assets/dist/d058b00d.svg"
+                alt="Payment Partner"
+              />
+            </span>
+            <span>
+              <img
+                src="https://assets.pharmeasy.in/web-assets/dist/e9445364.svg"
+                alt="Payment Partner"
+              />
+            </span>
+          </div>
+          <div id="copy">© 2024 PharmEasy. All Rights Reserved</div>
+        </div>
+      </div>
+    </>
   );
-}
+};
+
+export default Footer;

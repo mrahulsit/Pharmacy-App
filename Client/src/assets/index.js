@@ -14,6 +14,7 @@ import motherbaby from './motherbaby.jpg'
 import fitness from './fitness.jpg'
 import ayurvedic from './ayuervedic.jpg'
 import diabetic_care from './diabetic_care.jpg'
+import Mobile from './Mobile.jpg'
 
 export {
     item1,
@@ -31,5 +32,6 @@ export {
     motherbaby,
     fitness,
     ayurvedic,
-    diabetic_care
+    diabetic_care,
+    Mobile
 };

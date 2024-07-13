@@ -4,17 +4,36 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import '../Styles/Slide.css'
 
-function Slide({cards}) {
+function Slide({ cards }) {
   const settings = {
     className: "center",
-    dots:true,
     infinite: true,
-    centerPadding: "60px",
-    slidesToShow: 8,
+    slidesToShow: 7,
     swipeToSlide: true,
-    autoplay:true,
+    autoplay: true,
     autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
   };
+
   return (
     <div className="slider-container">
       <Slider {...settings}>
@@ -22,7 +41,7 @@ function Slide({cards}) {
           <div className="card-item" key={index}>
             {card}
           </div>
-          ))}
+        ))}
       </Slider>
     </div>
   );

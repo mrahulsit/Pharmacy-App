@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import { Button, Form } from 'react-bootstrap';
 import '../Styles/Home.css'
-import {CarouselSwipe , Brands ,Card , Footer , NavMain} from '../Components/index.js';
+import {CarouselSwipe , Brands ,Card} from '../Components/index.js';
 import { wandc , medicine , healthcare, medicare} from '../assets/index.js';
 import '../Styles/Card.css'
 import { InputLabel } from '@mui/material';
@@ -18,10 +18,9 @@ function Home() {
     const sources = [medicine,healthcare,medicare,wandc]
   return (
     <>
-    <NavMain />
     <h2 className='aboutText'>What Are you Looking for ?</h2>
     <Form className="mb-5">
-  <InputLabel>
+    <InputLabel>
     <div className="search-wrapper" style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
       <input
         type="search"
@@ -50,12 +49,9 @@ function Home() {
               <Card source={sources[index]} key={index} Title={title} />
             ))}
           </div>
-         <CarouselSwipe />
-         
-         <h2 className='shop'>Shop By Categories</h2>
-         <Brands />
-         
-         <Footer/> 
+        <CarouselSwipe />
+        <h2 className='shop'>Shop By Categories</h2>
+        <Brands />
     </>
   )
 }

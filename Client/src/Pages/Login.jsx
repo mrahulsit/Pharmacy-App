@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useHistory
+import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Drawer from '@mui/material/Drawer';
 import axios from 'axios';
-import Signup from './Signup.jsx'; // Ensure Signup is correctly imported
+import Signup from './Signup.jsx';
 import '../Styles/Login.css';
 
 export default function Login() {
@@ -14,8 +13,7 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showSignup, setShowSignup] = useState(false); // State to toggle between login and signup
-  const history = useNavigate(); // Initialize useHistory
+  const [showSignup, setShowSignup] = useState(false); 
 
   const toggleDrawer = (anchor, open) => (event) => {
     if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -77,13 +75,6 @@ export default function Login() {
     </Box>
   );
 
-  useEffect(() => {
-    if (state.right) {
-      history('/#login');
-    } else {
-      history('/');
-    }
-  }, [state.right, history]); // Update URL when drawer state changes
 
   return (
     <>

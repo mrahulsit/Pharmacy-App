@@ -1,16 +1,16 @@
 /* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
 import '../Styles/BrandCard.css';
 
-export default function BrandCard({ source, Title}) {
+export default function BrandCard({ source, Title, srcUrl }) {
   return (
-    <>
-    <div className='card'>
-        <img src={source} alt='image' className='card-image '/>
+    <div style={{margin:'0.5em'}}>
+      <Link to={srcUrl} className='card' style={{width:'100%' , border:'0'}}>
+        <img style={{width:'100%' , borderRadius:'1rem' , border:'0',height:'50%'}} src={source} alt={Title} className='card-image' />
+      </Link>
+      <div className='card-text'>
+          <h6>{Title}</h6>
+        </div>
     </div>
-    <div className='card-text'>
-    <h6 style={{marginTop:'0.2dvh' , textAlign:'center'}}><span>{Title}</span></h6>
-    </div>
-    </>
-    
   );
 }

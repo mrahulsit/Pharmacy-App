@@ -1,6 +1,6 @@
 import { BrandCard, Slide } from '../Components/index';
 import { ayurvedic, diabetic_care, elder, fitness, motherbaby, musthave, personalcare, skincare } from '../assets/index.js';
-import '../Styles/Brands.css'
+import '../Styles/Brands.css';
 
 const titles = {
   title1: 'MustHaves',
@@ -14,12 +14,13 @@ const titles = {
 };
 
 function Brands() {
-  const sources = [musthave, elder, personalcare, skincare,motherbaby,fitness,ayurvedic,diabetic_care];
-  // const url  = ['/musthave', '/elder','/personalcare','/skincare','/motherbaby','/fitness','/ayurvedic', '/diabetic_care'];
+  const sources = [musthave, elder, personalcare, skincare, motherbaby, fitness, ayurvedic, diabetic_care];
+  const url = ['/musthave', '/elder', '/personalcare', '/skincare', '/motherbaby', '/fitness', '/ayurvedic', '/diabetic_care'];
+
   const cards = Object.values(titles).map((title, index) => (
-    <BrandCard source={sources[index]} key={index} Title={title}/>
+    <BrandCard source={sources[index]} key={index} Title={title} srcUrl={url[index]} />
   ));
-  
+
   return (
     <div className='container'>
       <Slide cards={cards} />
