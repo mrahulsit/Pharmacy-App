@@ -1,44 +1,92 @@
-<h1>Pharmacy Project</h1><br/>
-This project is a Pharmacy Management System built with React and Vite on the frontend, and Node.js with Express on the backend.<br/>
+# Pharmacy Management System
 
-**Frontend**<br/>
-Technologies Used<br/>
-React: A JavaScript library for building user interfaces.<br/>
-Vite: A next-generation frontend tool that provides fast development server and optimized production builds.<br/>
+This project is a Pharmacy Management System built with React and Vite on the frontend, and Node.js with Express on the backend.
 
-**Getting Started:**<br/>
+## Table of Contents
+
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Frontend Setup](#frontend-setup)
+  - [Backend Setup](#backend-setup)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Technologies Used
+
+**Frontend:**
+
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A next-generation frontend tool that provides a fast development server and optimized production builds.
+
+**Backend:**
+
+- **Node.js**: A JavaScript runtime built on Chrome's V8 JavaScript engine.
+- **Express**: A fast, unopinionated, minimalist web framework for Node.js.
+
+## Getting Started
+
+### Frontend Setup
+
 To get started with the frontend:
-**Clone the Repository**<br/>
-``git clone <repository-url><br/>
-cd pharmacy-project``
 
-**Install Dependencies**<br/>
-(Ensure you have Node.js and npm installed)<br/>
-``npm install``<br/>
+1. **Clone the Repository**:
 
-Run the Development Server<br/>
-``npm run dev``<br/>
-This will start the Vite development server. ``Open http://localhost:3000 to view it in the browser``.
+   ```sh
+   git clone <repository-url>
+   cd pharmacy-project
+   ```
 
-*Build for Production*<br/>
-``npm run build``<br/>
-This command builds the app for production to the build folder.
+2. **Install Dependencies**:
+   (Ensure you have Node.js and npm installed)
 
-**Backend**<br/>
-Technologies Used<br/>
-*Node.js*: A JavaScript runtime built on Chrome's V8 JavaScript engine.<br/>
-*Express*: A fast, unopinionated, minimalist web framework for Node.js.<br/>
+   ```sh
+   npm install
+   ```
 
-Setting Up the Backend<br/>
-*Navigate to Backend Directory*
-``cd backend``<br/>
+3. **Run the Development Server**:
 
-Install Dependencies<br/>
-``npm install``<br/>
+   ```sh
+   npm run dev
+   ```
 
-Run the Backend Server<br/>
-``npm start``<br/>
-This will start the backend server. By default, it will run on ``http://localhost:5000``.<br/>
+   This will start the Vite development server. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-***Contributing***<br/>
+4. **Build for Production**:
+   ```sh
+   npm run build
+   ```
+   This command builds the app for production to the `build` folder.
+
+### Backend Setup
+
+To set up the backend:
+
+1. **Navigate to Backend Directory**:
+
+   ```sh
+   cd backend
+   ```
+
+2. **Install Dependencies**:
+
+   ```sh
+   npm install
+   ```
+
+3. **Run the Backend Server**:
+   ```sh
+   npm start
+   ```
+   This will start the backend server. By default, it will run on [http://localhost:5000](http://localhost:5000).
+
+## Contributing
+
 Contributions are welcome! If you have any improvements or suggestions, feel free to fork the repository and submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to further customize this `README.md` to suit your project's specific needs.
