@@ -1,5 +1,5 @@
 import MedicineBrand from "../Components/MedicineBrand";
-import "../Styles/Cart.css";
+import "../index.css";
 
 function MustHave() {
   return (

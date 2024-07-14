@@ -2,7 +2,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import '../Styles/Slide.css'
+import "../index.css";
 
 function Slide({ cards }) {
   const settings = {

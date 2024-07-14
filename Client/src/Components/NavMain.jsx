@@ -1,5 +1,5 @@
 import PharmacyLogo from "../assets/PHARMACY.png";
-import "../Styles/Navbar.css";
+import "../index.css";
 import Sidebar from "./Sidebar";
 import "font-awesome/css/font-awesome.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -130,8 +130,8 @@ function NavMain() {
         <Link to="/medicine" className="px-2 text-white link-item">
           Medicine
         </Link>
-        <Link to="/healthblogs" className="px-2 text-white link-item">
-          Health Blogs
+        <Link to="/healthcare" className="px-2 text-white link-item">
+          HealthCare
         </Link>
         <Link to="/plus" className="px-2 text-white link-item">
           PLUS

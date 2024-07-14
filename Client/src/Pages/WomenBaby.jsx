@@ -1,11 +1,5 @@
-
-
 function WomenBaby() {
-  return (
-    <div>
-      WomenBaby
-    </div>
-  )
+  return <div>WomenBaby</div>;
 }
 
-export default WomenBaby
+export default WomenBaby;

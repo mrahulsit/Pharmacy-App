@@ -1,7 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { item1, item2, item3, item4 } from "../assets/index.js";
-import "../Styles/Carousels.css";
+import "../index.css";
 
 export default function CarouselSwipe() {
   const responsive = {

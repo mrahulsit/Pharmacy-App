@@ -4,17 +4,24 @@ import {
   MDBCardBody,
   MDBCardTitle,
   MDBCardImage,
-  MDBBtn
-} from 'mdb-react-ui-kit';
-import '../Styles/Card.css';
+  MDBBtn,
+} from "mdb-react-ui-kit";
+import "../index.css";
 
 export default function Card({ source, Title }) {
   return (
-    <MDBCard className='card'>
-      <MDBCardImage src={source} position='top' alt='image' className='w-100 card-image ' />
-      <MDBCardBody >
-        <MDBCardTitle><span>{Title}</span></MDBCardTitle>
-        <MDBBtn href='#'>Buy Now</MDBBtn>
+    <MDBCard className="card">
+      <MDBCardImage
+        src={source}
+        position="top"
+        alt="image"
+        className="w-100 card-image "
+      />
+      <MDBCardBody>
+        <MDBCardTitle>
+          <span>{Title}</span>
+        </MDBCardTitle>
+        <MDBBtn href="#">Buy Now</MDBBtn>
       </MDBCardBody>
     </MDBCard>
   );

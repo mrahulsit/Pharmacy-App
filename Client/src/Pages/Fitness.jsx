@@ -1,11 +1,3 @@
-
-
-
 export default function Fitness() {
-  
-  return (
-    <div>
-      Fitness
-    </div>
-  )
+  return <div>Fitness</div>;
 }

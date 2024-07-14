@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useCart } from "../context/CartContext";
-import "../Styles/MedicineCard.css";
+import "../index.css";
 
 export default function MedicineCard({ source, Title, Price }) {
   const { addToCart } = useCart();

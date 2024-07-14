@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react-refresh/only-export-components */
 
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext } from "react";
 
 const CartContext = createContext();
 
@@ -22,12 +22,15 @@ export const CartProvider = ({ children }) => {
   };
 
   const getTotalPrice = () => {
-    return cart.reduce((total, item) => total + parseFloat(item.Price.replace('₹', '')), 0);
+    return cart.reduce(
+      (total, item) => total + parseFloat(item.Price.replace("₹", "")),
+      0
+    );
   };
 
   const storeCartToDatabase = (cart) => {
     // Simulate a database call
-    console.log('Storing cart to database:', cart);
+    console.log("Storing cart to database:", cart);
   };
 
   const contextValue = {
@@ -37,7 +40,9 @@ export const CartProvider = ({ children }) => {
     getTotalPrice,
   };
 
-  return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>
+  );
 };
 
 export const useCart = () => useContext(CartContext);

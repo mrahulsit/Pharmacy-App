@@ -1,6 +1,6 @@
 import MedicineCard from "./MedicineCard";
 import { ayurvedic } from "../assets/index.js";
-import "../Styles/Brands.css";
+import "../index.css";
 
 const medicines = {
   Paracetamol: {

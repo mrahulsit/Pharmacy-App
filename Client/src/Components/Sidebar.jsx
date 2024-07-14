@@ -1,8 +1,8 @@
-import * as React from 'react';
-import Drawer from '@mui/material/Drawer';
-import '../Styles/Sidebar.css';
-import Pincode from './Pincode.jsx';
-import axios from 'axios';
+import * as React from "react";
+import Drawer from "@mui/material/Drawer";
+import "../index.css";
+import Pincode from "./Pincode.jsx";
+import axios from "axios";
 
 export default function Sidebar() {
   const [state, setState] = React.useState({
@@ -16,7 +16,10 @@ export default function Sidebar() {
   const [postOffice, setPostOffice] = React.useState("");
 
   const toggleDrawer = (anchor, open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
       return;
     }
 
@@ -29,11 +32,13 @@ export default function Sidebar() {
 
   const handleRequest = async () => {
     try {
-      const res = await axios.get(`https://api.postalpincode.in/pincode/${name}`);
+      const res = await axios.get(
+        `https://api.postalpincode.in/pincode/${name}`
+      );
       const postOfficeName = res.data[0].PostOffice[0].Name;
       setPostOffice(postOfficeName);
       console.log(postOfficeName);
-      closeDrawer('right');  // Close the drawer after successful request
+      closeDrawer("right"); // Close the drawer after successful request
     } catch (error) {
       console.error("Pincode Not Found!");
       setPostOffice("Pincode Not Found!");
@@ -41,11 +46,11 @@ export default function Sidebar() {
   };
 
   return (
-    <div className='head'>
-      {['right'].map((anchor) => (
+    <div className="head">
+      {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <span className='spanSmall'>Delivery to</span> <br/>
-          <span onClick={toggleDrawer(anchor, true)} className='spantext'>
+          <span className="spanSmall">Delivery to</span> <br />
+          <span onClick={toggleDrawer(anchor, true)} className="spantext">
             {postOffice ? `${postOffice}` : "Enter Pincode"}
           </span>
           <Drawer
@@ -60,7 +65,7 @@ export default function Sidebar() {
               handleRequest={handleRequest}
               closeDrawer={() => closeDrawer(anchor)}
             />
-         </Drawer>
+          </Drawer>
         </React.Fragment>
       ))}
     </div>

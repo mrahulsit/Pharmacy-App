@@ -1,7 +1,7 @@
 import { Mobile } from "../assets/index.js";
 import { useRef } from "react";
 import { GooglePlayButton, AppGalleryButton } from "react-mobile-app-button";
-import "../Styles/Footer.css";
+import "../index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebook,
