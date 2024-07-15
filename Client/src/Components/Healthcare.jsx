@@ -1,6 +1,7 @@
 import "../index.css";
+import { Pharmacy } from "../assets/index.js";
 
-const App = () => {
+const HealthCare = () => {
   return (
     <div>
       <header>
@@ -16,7 +17,7 @@ const App = () => {
         </div>
       </header>
 
-      <div style={{ marginLeft: "250px" }} className="medic">
+      <div className="medic">
         <h1>Order Medicine Online</h1>
       </div>
 
@@ -130,17 +131,13 @@ const App = () => {
         />
         <h2>Offers Just For You</h2>
       </div>
-
       <div
         className="carousel car_1"
         data-flickity='{ "groupCells": 4,"autoplay":true  }'
       >
         <div className="carousel-cell car_2">
           <div className="offerslide sli_1">
-            <img
-              src="https://cms-contents.pharmeasy.in/offer/1cc6737ebd0-PELOGO.png?dim=60x0&dpr=1.25&q=100"
-              alt=""
-            />
+            <img src={Pharmacy} alt="" />
             <div className="pa_1">
               <p>
                 Flat 20% off + 20% <br />
@@ -156,7 +153,7 @@ const App = () => {
       <div className="Qu">
         <h4>Get 3-Step Quality-Checked Medicines</h4>
         <p>
-          PharmEasy is a one-stop-shop for all your healthcare needs. We have
+          `PharmEasy is a one-stop-shop for all your healthcare needs. We have
           1L+ products for you to choose from. Buy medicines online at
           affordable prices from the comforts of your home in just a few clicks
           and get them delivered at your doorstep. <br />
@@ -164,14 +161,14 @@ const App = () => {
           convenient. All you have to do is search for the products you need on
           our website or app, add to cart and then proceed with the checkout
           process. <br />
-          With our scheduled refill reminder, you don’t even need to keep track
-          of your refill dates. <br />
-          What’s more, we have great offers, with added discounts and massive
-          e-wallet cashbacks on purchasing medicines!
+          With our scheduled refill reminder, you don&apos;t even need to keep
+          track of your refill dates. <br />
+          What&apos;s more, we have great offers, with added discounts and
+          massive e-wallet cashbacks on purchasing medicines!
         </p>
       </div>
     </div>
   );
 };
 
-export default App;
+export default HealthCare;

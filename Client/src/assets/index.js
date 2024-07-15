@@ -15,6 +15,8 @@ import fitness from "./fitness.jpg";
 import ayurvedic from "./ayuervedic.jpg";
 import diabetic_care from "./diabetic_care.jpg";
 import Mobile from "./Mobile.jpg";
+import PHARMACY from "./PHARMACY.png";
+import Pharmacy from "./PharmacyLogo.png";
 
 export {
   item1,
@@ -34,4 +36,6 @@ export {
   ayurvedic,
   diabetic_care,
   Mobile,
+  PHARMACY,
+  Pharmacy,
 };

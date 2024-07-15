@@ -1,63 +1,29 @@
-.medic > h1 {
-  font-size: 24px;
-  color: rgb(41, 40, 40);
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-#carterer {
-  display: flex;
-  margin-left: 200px;
+header {
+  background-color: #f8f9fa;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
 }
 
-.cart_right {
-  border: 1px solid black;
-  margin-left: 90px;
-}
-
-.first_class {
-  width: 330px;
-  height: 50px;
-  border: 1px solid black;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  padding-left: 10px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
-
-.second_class {
-  width: 330px;
-  height: 50px;
-  border: 1px solid black;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  padding-left: 10px;
-  border-radius: 5px;
-}
-
-.first_img > img {
-  padding-right: 10px;
-}
-
+/* Top bar styles */
 .top_bar {
   display: flex;
-  margin-left: 250px;
-  margin-top: 20px;
-  margin-bottom: 40px;
-  text-align: center;
+  justify-content: center;
   align-items: center;
   color: black;
+  padding: 10px;
+  text-align: center;
 }
 
-.top_fir {
-  font-size: 17px;
-  margin-right: 20px;
-}
-
+.top_fir,
 .top_sec {
-  font-size: 14px;
-  margin-left: 12px;
+  margin: 0 10px;
 }
 
 .top_im > img {
@@ -65,33 +31,194 @@
   height: 15px;
 }
 
+/* Main content styles */
+.medic > h1 {
+  font-size: 24px;
+  color: rgb(41, 40, 40);
+  text-align: center;
+  margin: 20px 0;
+}
+
+#carterer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+}
+
+.cart_box,
+.cart_right {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 10px;
+  flex: 1 1 300px;
+}
+
+.cart_box1,
+.cart_box2,
+.cart_box3 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cart_box1 > p,
+.cart_box2 > p,
+.cart_box3 > p {
+  margin: 0 10px;
+}
+
+.cart_box1 img,
+.cart_box3 img {
+  width: 30px;
+  height: 30px;
+}
+
+.cart_box3 > input {
+  flex-grow: 1;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.search {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+/* Right cart styles */
+.first_class,
+.second_class {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.first_img > img {
+  padding-right: 10px;
+}
+
 .img_fir > img {
   width: 15px;
   height: 15px;
 }
 
-.first_para {
-  margin-right: 80px;
-}
-
+.first_para,
 .first_para1 {
-  margin-right: 110px;
+  flex-grow: 1;
+  text-align: left;
 }
 
-.sli_1 {
-  width: 300px;
+/* Images bar */
+#imagesbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0;
 }
 
-.pa_1 > p {
-  width: 170px;
-  font-size: 16px;
+#imagesbar > img {
+  margin: 10px;
+  width: 100px;
+  height: auto;
 }
 
+/* Offers section */
+.offers {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.offers img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Carousel */
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  padding: 10px;
+}
+
+.carousel-cell {
+  flex: 0 0 auto;
+  margin: 10px;
+}
+
+.offerslide {
+  display: flex;
+  align-items: center;
+}
+
+.offerslide img {
+  margin-right: 10px;
+}
+
+/* Quality section */
 .Qu {
-  margin-left: 100px;
-  margin-top: 90px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 800px;
 }
 
 .Qu > p {
-  line-height: 30px;
+  line-height: 1.6;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .top_bar {
+    flex-direction: column;
+  }
+
+  #carterer {
+    flex-direction: column;
+    margin-left: 0;
+  }
+
+  .cart_box,
+  .cart_right {
+    flex: 1 1 100%;
+  }
+
+  .first_class,
+  .second_class {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .first_para,
+  .first_para1 {
+    margin-right: 0;
+  }
+
+  .Qu {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .top_bar {
+    font-size: 14px;
+  }
+
+  .top_fir,
+  .top_sec {
+    margin: 5px 0;
+  }
+
+  .cart_box1 img,
+  .cart_box3 img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .offerslide p {
+    font-size: 14px;
+  }
 }
