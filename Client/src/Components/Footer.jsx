@@ -60,7 +60,6 @@ const Footer = () => {
         <div className="mobimg">
           <img src={Mobile} alt="mobile App" />
         </div>
-
         <div className="app">
           <div id="txt">Download the App for Free</div>
           <div className="log">
@@ -129,7 +128,6 @@ const Footer = () => {
             <div>
               <h4>Featured Categories</h4>
               <p>Covid Essentials</p>
-              <p>Devices</p>
               <p>Nutrition and Fitness Supplements</p>
               <p>Personal Care</p>
               <p>Ayurvedic Care</p>
@@ -137,7 +135,6 @@ const Footer = () => {
               <p>Skin Care</p>
               <p>Diabetic Care</p>
               <p>Women Care</p>
-              <p>Health Food and Drinks</p>
               <p>Ortho Care</p>
             </div>
             <div>
