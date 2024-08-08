@@ -1,8 +1,8 @@
 import { useState } from "react";
+import axios from "axios";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
-import axios from "axios";
 import "../index.css";
 
 export default function Signup() {
@@ -26,7 +26,7 @@ export default function Signup() {
         }
       );
       console.log(response.data);
-      if (response.status === 201) {
+      if (response.status === 200) {
         setSuccess("Signup completed. Navigate to Log in.");
       } else {
         setError("Signup failed. Please try again.");
