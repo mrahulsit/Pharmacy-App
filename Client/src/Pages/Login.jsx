@@ -1,9 +1,9 @@
 import { useState } from "react";
+import axios from "axios";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Drawer from "@mui/material/Drawer";
-import axios from "axios";
 import Signup from "./Signup.jsx";
 import "../index.css";
 
@@ -29,10 +29,13 @@ export default function Login() {
     event.preventDefault();
     setError("");
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/api/login`,
+        {
+          username,
+          password,
+        }
+      );
       if (response.data.token) {
         localStorage.setItem("token", response.data.token);
         setIsLoggedIn(true);

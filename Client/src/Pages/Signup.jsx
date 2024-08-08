@@ -17,11 +17,14 @@ export default function Signup() {
     setError("");
     setSuccess("");
     try {
-      const response = await axios.post("http://localhost:5000/api/register", {
-        username,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        `${import.meta.VITE_BASE_URL}/api/register`,
+        {
+          username,
+          email,
+          password,
+        }
+      );
       console.log(response.data);
       if (response.status === 201) {
         setSuccess("Signup completed. Navigate to Log in.");
