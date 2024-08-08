@@ -73,7 +73,7 @@ app.post("/api/register", async (req, res) => {
     await user.save();
 
     console.log("User registered successfully:", username);
-    res.status(201).json({ message: "User registered successfully" });
+    res.status(200).json({ message: "User registered successfully" });
   } catch (error) {
     console.error("Error during registration:", error);
     res.status(500).json({ message: "Server error" });

@@ -18,7 +18,7 @@ export default function Signup() {
     setSuccess("");
     try {
       const response = await axios.post(
-        `${import.meta.VITE_BASE_URL}/api/register`,
+        `${import.meta.env.VITE_BASE_REGISTER}/api/register`,
         {
           username,
           email,
