@@ -9,7 +9,20 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors());
+const corsOptions = {
+  origin: process.env.BASE_URL,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: [
+    "Origin",
+    "X-Requested-With",
+    "Content-Type",
+    "Authorization",
+  ],
+  credentials: true,
+  secure: true,
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 // Connect to MongoDB
